@@ -34,7 +34,18 @@ class UploadController extends Controller
 
     public function status()
     {
-        return response()->json(Upload::latest()->get());
+        $uploads = Upload::orderBy('created_at', 'desc')->get()->map(function($u) {
+            return [
+                'id' => $u->id,
+                'filename' => $u->filename,
+                'status' => $u->status,
+                'created_at_formatted' => $u->created_at->format('Y-m-d h:i A'),
+                'created_at_human' => $u->created_at->diffForHumans(),
+            ];
+        });
+
+        return response()->json($uploads);
     }
+
 }
 

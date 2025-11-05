@@ -64,7 +64,7 @@ class ProcessCsvUpload implements ShouldQueue
                     [
                         'PRODUCT_TITLE' => $data['PRODUCT_TITLE'] ?? null,
                         'PRODUCT_DESCRIPTION' => $data['PRODUCT_DESCRIPTION'] ?? null,
-                        'STYLE#' => $data['STYLE#'] ?? null,
+                        'STYLE' => $data['STYLE#'] ?? null,
                         'SANMAR_MAINFRAME_COLOR' => $data['SANMAR_MAINFRAME_COLOR'] ?? null,
                         'SIZE' => $data['SIZE'] ?? null,
                         'COLOR_NAME' => $data['COLOR_NAME'] ?? null,
